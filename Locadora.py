@@ -12,6 +12,13 @@ class Produto():
         self.valor = 0
         self.desconto = 1
         self.desc_Prod = None
+        self.produtos = []
+
+    def getProdutos(self):
+        return self.produtos
+
+    def setProdutos(self, produtos):
+        self.produtos = produtos
 
     def getTitulo(self):
         return self.titulo
@@ -56,8 +63,8 @@ class Livro(Produto):
         self.autor = autor
           
     def getDesconto(self):
-        desconto = super().desconto * 0.9
-        return desconto
+        desc = super().desconto * 0.9
+        return desc
 
     def descreve_produto(self, desc_Prod):
         self.desc_Prod = desc_Prod
@@ -79,8 +86,8 @@ class CD(Produto):
         self.artista = artista
         
     def getDesconto(self):
-        desconto = super().desconto * 0.85
-        return desconto
+        desc = super().desconto * 0.85
+        return desc
 
     def descreve_produto(self, desc_Prod):
         self.desc_Prod = desc_Prod
@@ -101,8 +108,8 @@ class DVD(Produto):
         self.duracao = duracao
 
     def getDesconto(self):
-        desconto = super().desconto * 0.8
-        return desconto
+        desc = super().desconto * 0.8
+        return desc
         
     def descreve_produto(self, desc_Prod):
         self.desc_Prod = desc_Prod
@@ -135,16 +142,19 @@ obj_Livro.descreve_produto("´Redes de computadores´ foi atualizado para reflet
                             as redes fixas não foram ignoradas com cobertura de ADSL, Internet via cabo, Ethernet \
                             de gigabit, redes não-hierárquicas, NAT e MPLS.")
 obj_Livro.setAutor("Andrew Tanenbaum")
+obj_Livro.setDesconto(1)
 
 obj_CD.setTitulo("CD - Coletanea programação")
 obj_CD.setValor(20)
 obj_CD.descreve_produto("Musicas para ouvir enquanto programa")
 obj_CD.setArtista("Artistas desconhecidos")
+obj_CD.setDesconto(1)
 
 obj_DVD.setTitulo("DVD - Coletanea Clipes programação")
 obj_DVD.setValor(20)
 obj_DVD.descreve_produto("Clipes para Assistir apos programar")
 obj_DVD.setDuracao("Artistas desconhecidos")
+obj_DVD.setDesconto(1)
 
     
 produto1 = [obj_Produto.getTitulo(), obj_Produto.descricao(), obj_Produto.getValor()]
@@ -155,3 +165,4 @@ produto4 = [obj_DVD.getTitulo(), obj_DVD.descricao(), obj_DVD.getDuracao(), obj_
 print (produto1)
 print (produto2)
 print (produto3)
+print (produto4)
